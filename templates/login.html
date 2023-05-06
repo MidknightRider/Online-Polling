@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body>
+	<h1>Login</h1>
+	<form method="post" action="{{ url_for('login') }}">
+		<label for="phone">Phone number:</label>
+		<input type="tel" id="phone" name="phone" placeholder="123-45-678" pattern="\d{3}-\d{2}-\d{3}" required>
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password" required>
+		<input type="checkbox" onclick="passwordVisible()"> Show Password
+        <hr>
+		<div style="text-align:center">
+		<input type="submit" value="Submit">
+		</div>
+	</form>
+
+	<script>
+        function passwordVisible() {
+          var x = document.getElementById("password");
+          if (x.type === "password") {
+            x.type = "text";
+          } else {
+            x.type = "password";
+          }
+        }
+    </script>
+
+</body>
+</html>
